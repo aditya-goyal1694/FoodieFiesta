@@ -1,0 +1,47 @@
+# Node.js / React
+node_modules/
+build/
+dist/
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+.vite/
+.next/
+
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+.env
+venv/
+env/
+Pipfile.lock
+poetry.lock
+instance/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.coverage
+htmlcov/
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+*.log
+
+# Optional: Database or volume files
+*.sqlite3
+*.db
