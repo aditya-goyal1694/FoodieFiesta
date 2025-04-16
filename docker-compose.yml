@@ -28,7 +28,7 @@ services:
     MYSQL_USER: root
     MYSQL_HOST: interchange.proxy.rlwy.net
   ports:
-    - "3306:3306"
+    - "51103:51103"
   networks:
     - foodienet
   volumes:
