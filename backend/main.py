@@ -7,10 +7,6 @@ app = FastAPI()
 
 inprogress_orders = {}
 
-@app.get("/")
-def read_root():
-    return {"message": "Backend is working!"}
-
 @app.post("/")
 async def handle_request(request: Request):
     # Retrieve the JSON data from the request
