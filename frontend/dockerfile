@@ -5,13 +5,13 @@ FROM node:18
 WORKDIR /app
 
 # Copy package.json and package-lock.json first to optimize caching
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json ./ 
 
 # Install dependencies (include dev dependencies for development)
 RUN npm ci
 
 # Copy frontend code
-COPY . .
+COPY . . 
 
 # Ensure native modules are correctly built
 RUN npm rebuild
