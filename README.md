@@ -2,8 +2,29 @@
 
 Foodie Fiesta is a smart restaurant platform that enhances the dining experience with an AI-powered chatbot, **Chat-à-la-Carte**. This chatbot enables users to explore the menu, place orders, modify their selections, and track their orders in real time.
 
-## Features
-- **Interactive Chatbot**: Order food through an NLP-Based assistant.
+---
+
+## 🚀 Deployment Architecture
+
+| Component     | Platform      |
+|---------------|---------------|
+| **Frontend**  | [Vercel](https://vercel.com/)      |
+| **Backend**   | [Render](https://render.com/)      |
+| **Database**  | [Railway](https://railway.app/)    |
+| **Chatbot**   | [Dialogflow](https://dialogflow.cloud.google.com/) |
+| **Dev Tools** | Docker & Docker Compose            |
+
+- The **frontend** is hosted on Vercel for fast, scalable static site hosting.
+- The **backend** is deployed on Render with an exposed API to handle order logic and chatbot fulfillment.
+- **MySQL** is managed and hosted on Railway to persist menu and order data.
+- The **Dialogflow chatbot** interacts with users and communicates with the FastAPI backend via webhook.
+- During development, **ngrok** is used to test webhook functionality locally.
+
+---
+
+## ✨ Features
+
+- **Interactive Chatbot**: Order food through an NLP-based assistant.
 - **Diverse Menu**: Explore Italian, North Indian, South Indian, and Street Food options.
 - **Seamless Ordering**: Modify and track your orders easily.
 - **FastAPI Backend**: Efficient backend powered by Python’s FastAPI.
@@ -12,21 +33,25 @@ Foodie Fiesta is a smart restaurant platform that enhances the dining experience
 
 ---
 
-## Tech Stack
-### **Frontend:**
+## 🧱 Tech Stack
+
+### **Frontend**
 - React + Vite
 - Tailwind CSS
 - Lucide Icons
 
-### **Backend:**
+### **Backend**
 - FastAPI (Python)
 - MySQL
 - Uvicorn Server
 
-### **AI & Deployment:**
-- Dialogflow for chatbot
-- ngrok for secure API tunneling
-- Docker & Docker Compose for containerization
+### **AI & DevOps**
+- Dialogflow (chatbot)
+- Render (backend hosting)
+- Railway (MySQL hosting)
+- Vercel (frontend deployment)
+- ngrok (for local development and testing)
+- Docker & Docker Compose (for local containerization)
 
 ---
 
