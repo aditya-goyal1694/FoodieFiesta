@@ -29,16 +29,7 @@ export default function ChatBot() {
       
       {isOpen && (
         <div className="bg-white rounded-lg shadow-xl p-4 flex flex-col items-center">
-        <iframe
-          ref={iframeRef}
-          allow="microphone;"
-          width="350"
-          height="430"
-          src="https://console.dialogflow.com/api-client/demo/embedded/6b155a74-1d8f-46c3-a655-50dea19cc6e6"
-          className="border-0 w-full max-w-sm rounded-lg"
-          loading="lazy"
-          onError={(e) => console.error("Chatbot failed to load", e)}
-        />
+        <iframe height="430" width="350" src="https://bot.dialogflow.com/6b155a74-1d8f-46c3-a655-50dea19cc6e6"></iframe>
         <p className="mt-2 text-gray-600 text-sm">
           If the chatbot doesn’t load, please refresh or check your internet connection.
         </p>
