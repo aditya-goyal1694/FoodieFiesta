@@ -33,7 +33,7 @@ services:
     - foodienet
   volumes:
     - mysql_data:/var/lib/mysql
-    - ./backend/foodiefiesta.sql:/docker-entrypoint-initdb.d/foodiefiesta.sql
+    - ./backend/foodiefiesta.sql:/docker-entrypoint-initdb.d/foodieFiesta.sql
   healthcheck:
     test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
     interval: 10s
