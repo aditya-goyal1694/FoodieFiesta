@@ -26,9 +26,7 @@ function chatBot() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100">
       <df-messenger></df-messenger>
-    </div>
   );
 }
 
