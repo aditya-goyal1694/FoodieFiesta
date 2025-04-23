@@ -52,6 +52,7 @@ Foodie Fiesta is a smart restaurant platform that enhances the dining experience
 - Vercel (frontend deployment)
 - ngrok (for local development and testing)
 - Docker & Docker Compose (for local containerization)
+- Jenkis for CI/CD pipeline
 
 ---
 
