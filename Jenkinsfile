@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        RENDER_DEPLOY_HOOK = credentials('render-deploy-hook')
-        MYSQL_ROOT_PASSWORD = credentials('MYSQL_ROOT_PASSWORD')  // Secret Text credentials for MySQL root password
-        MYSQL_USER = credentials('MYSQL_USER')                    // Secret Text credentials for MySQL user
-        MYSQL_PASSWORD = credentials('MYSQL_PASSWORD')            // Secret Text credentials for MySQL password
-        MYSQL_DATABASE = credentials('MYSQL_DATABASE')            // Secret Text credentials for MySQL database name
-        MYSQL_HOST = credentials('MYSQL_HOST')                    // Secret Text credentials for MySQL host
-        MYSQL_PORT = credentials('MYSQL_PORT')                    // Secret Text credentials for MySQL port
+        RENDER_DEPLOY_HOOK = credentials('render-deploy-hook')  // The Render deploy hook (webhook)
+        MYSQL_ROOT_PASSWORD = credentials('MYSQL_ROOT_PASSWORD') // Secret Text credentials for MySQL root password
+        MYSQL_USER = credentials('MYSQL_USER')                   // Secret Text credentials for MySQL user
+        MYSQL_PASSWORD = credentials('MYSQL_PASSWORD')           // Secret Text credentials for MySQL password
+        MYSQL_DATABASE = credentials('MYSQL_DATABASE')           // Secret Text credentials for MySQL database name
+        MYSQL_HOST = credentials('MYSQL_HOST')                   // Secret Text credentials for MySQL host
+        MYSQL_PORT = credentials('MYSQL_PORT')                   // Secret Text credentials for MySQL port
     }
 
     stages {
@@ -29,7 +29,10 @@ pipeline {
 
         stage('Trigger Deploy to Render') {
             steps {
-                sh 'curl -X GET "$RENDER_DEPLOY_HOOK"'
+                // Ensure that the environment variable is passed correctly to curl
+                script {
+                    sh 'curl -X GET "$RENDER_DEPLOY_HOOK"'
+                }
             }
         }
     }
