@@ -9,7 +9,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 sshagent(['github-ssh']) {
-                    git 'git@github.com:aditya-goyal1694/FoodieFiesta.git'
+                    git branch: 'main', url: 'git@github.com:aditya-goyal1694/FoodieFiesta.git'
                 }
             }
         }
