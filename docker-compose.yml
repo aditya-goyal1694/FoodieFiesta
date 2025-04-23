@@ -27,6 +27,7 @@ services:
       MYSQL_DATABASE: railway
       MYSQL_USER: root
       MYSQL_HOST: interchange.proxy.rlwy.net
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "51103:51103"
     networks:
