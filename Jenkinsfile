@@ -22,14 +22,23 @@ pipeline {
 
         stage('Build & Test with Docker Compose') {
             steps {
-                sh 'docker-compose -f docker-compose.yml up --build -d'
-                sh 'docker ps'
+                script {
+                    sh """
+                    export MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+                    export MYSQL_DATABASE=$MYSQL_DATABASE
+                    export MYSQL_USER=$MYSQL_USER
+                    export MYSQL_PASSWORD=$MYSQL_PASSWORD
+                    export MYSQL_HOST=$MYSQL_HOST
+                    export MYSQL_PORT=$MYSQL_PORT
+                    docker-compose -f docker-compose.yml up --build -d
+                    docker ps
+                    """
+                }
             }
         }
 
         stage('Trigger Deploy to Render') {
             steps {
-                // Ensure that the environment variable is passed correctly to curl
                 script {
                     sh 'curl -X GET "$RENDER_DEPLOY_HOOK"'
                 }
@@ -39,7 +48,10 @@ pipeline {
 
     post {
         always {
-            sh 'docker-compose -f docker-compose.yml down'
+            script {
+                // Shut down Docker Compose containers
+                sh 'docker-compose -f docker-compose.yml down'
+            }
         }
     }
 }
