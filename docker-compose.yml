@@ -18,27 +18,29 @@ services:
       - backend
     networks:
       - foodienet
-  
-  mysql:
-  image: mysql:8
-  restart: always
-  environment:
-    MYSQL_ROOT_PASSWORD: sbRAcyuDgQVRPHqOwFSBGONhbqmLooFV
-    MYSQL_DATABASE: railway
-    MYSQL_USER: root
-    MYSQL_HOST: interchange.proxy.rlwy.net
-  ports:
-    - "51103:51103"
-  networks:
-    - foodienet
-  volumes:
-    - mysql_data:/var/lib/mysql
-    - ./backend/foodiefiesta.sql:/docker-entrypoint-initdb.d/foodieFiesta.sql
-  healthcheck:
-    test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-    interval: 10s
-    retries: 5
 
+  mysql:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sbRAcyuDgQVRPHqOwFSBGONhbqmLooFV
+      MYSQL_DATABASE: railway
+      MYSQL_USER: root
+      MYSQL_HOST: interchange.proxy.rlwy.net
+    ports:
+      - "51103:51103"
+    networks:
+      - foodienet
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/foodiefiesta.sql:/docker-entrypoint-initdb.d/foodieFiesta.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
 
 networks:
   foodienet:
+
+volumes:
+  mysql_data:
