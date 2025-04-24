@@ -24,13 +24,13 @@ pipeline {
             steps {
                 script {
                     sh """
-                    export MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
-                    export MYSQL_DATABASE=$MYSQL_DATABASE
-                    export MYSQL_USER=$MYSQL_USER
-                    export MYSQL_PASSWORD=$MYSQL_PASSWORD
-                    export MYSQL_HOST=$MYSQL_HOST
-                    export MYSQL_PORT=$MYSQL_PORT
-                    docker-compose -f docker-compose.yml up --build -d
+                    export MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+                    export MYSQL_DATABASE=${MYSQL_DATABASE}
+                    export MYSQL_USER=${MYSQL_USER}
+                    export MYSQL_PASSWORD=${MYSQL_PASSWORD}
+                    export MYSQL_HOST=${MYSQL_HOST}
+                    export MYSQL_PORT=${MYSQL_PORT}
+                    docker compose -f docker-compose.yml up --build -d
                     docker ps
                     """
                 }
