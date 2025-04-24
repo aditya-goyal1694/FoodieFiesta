@@ -52,7 +52,20 @@ Foodie Fiesta is a smart restaurant platform that enhances the dining experience
 - Vercel (frontend deployment)
 - ngrok (for local development and testing)
 - Docker & Docker Compose (for local containerization)
-- Jenkis for CI/CD pipeline
+- **GitHub Actions** for CI/CD pipelines
+
+---
+
+## CI/CD Pipeline
+
+CI/CD is implemented using **GitHub Actions**:
+
+- Automatically triggers on push or pull requests.
+- Runs unit tests and code checks.
+- Builds Docker images and deploys the backend to Render.
+- Ensures continuous deployment for the frontend via Vercel.
+
+This automation streamlines the deployment process and ensures code quality with every update.
 
 ---
 
