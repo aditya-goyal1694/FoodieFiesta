@@ -1,4 +1,4 @@
-name: Backend Docker Build
+name: Backend Docker Build and Deploy
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,3 +20,8 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t foodie-fiesta-backend ./backend
+
+      - name: Deploy to Render
+        if: github.ref == 'refs/heads/main'
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
