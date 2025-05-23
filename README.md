@@ -22,6 +22,12 @@ Foodie Fiesta is a smart restaurant platform that enhances the dining experience
 
 ---
 
+## Workflow
+
+https://excalidraw.com/#json=88cG1DKHhH7VE0jTYavyL,5407Z_lmsyJgCJlAWCNoOw
+
+---
+
 ## ✨ Features
 
 - **Interactive Chatbot**: Order food through an NLP-based assistant.
